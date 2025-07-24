@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/amb-teens-site/static/css/main.fd7adb35.css",
+    "main.js": "/amb-teens-site/static/js/main.e861e9c4.js",
+    "static/js/453.0cade057.chunk.js": "/amb-teens-site/static/js/453.0cade057.chunk.js",
+    "index.html": "/amb-teens-site/index.html",
+    "main.fd7adb35.css.map": "/amb-teens-site/static/css/main.fd7adb35.css.map",
+    "main.e861e9c4.js.map": "/amb-teens-site/static/js/main.e861e9c4.js.map",
+    "453.0cade057.chunk.js.map": "/amb-teens-site/static/js/453.0cade057.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fd7adb35.css",
+    "static/js/main.e861e9c4.js"
+  ]
+}
