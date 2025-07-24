@@ -1,0 +1,478 @@
+/* Base Styling */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: linear-gradient(to right, #e0f7fa, #80deea);
+}
+
+/* Container */
+.signup-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 1rem;
+}
+
+/* Form Card */
+.signup-form {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  max-width: 500px;
+  width: 100%;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Title */
+.signup-form h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #00796b;
+}
+
+/* Label */
+.signup-form label {
+  display: block;
+  margin-bottom: 0.3rem;
+  color: #333;
+  font-weight: 600;
+}
+
+/* Input Field */
+.signup-form input,
+.signup-form select {
+  width: 100%;
+  padding: 0.7rem;
+  margin-bottom: 1.2rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.2s ease;
+}
+
+.signup-form input:focus,
+.signup-form select:focus {
+  border-color: #26a69a;
+  outline: none;
+}
+
+/* Next Button */
+.next-btn {
+  width: 100%;
+  padding: 0.9rem;
+  background: #26a69a;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.next-btn:hover {
+  background: #00796b;
+  transform: translateY(-2px);
+}
+
+/* Gender toggle */
+.toggle-group {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.toggle-group label {
+  flex: 1;
+  text-align: center;
+  background: #f0f0f0;
+  padding: 0.6rem 0.5rem;
+  border-radius: 8px;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.toggle-group input[type="radio"] {
+  display: none;
+}
+
+.toggle-group input[type="radio"]:checked + label {
+  background-color: #26a69a;
+  color: white;
+  font-weight: bold;
+}
+
+/* Disabled Select */
+select:disabled {
+  background-color: #eee;
+  color: #999;
+  cursor: not-allowed;
+}
+
+/* Error Message */
+.error-msg {
+  color: red;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+/* Password Strength Colors */
+.password-weak {
+  border-color: #e53935 !important;
+  background-color: #ffebee;
+}
+.password-medium {
+  border-color: #fdd835 !important;
+  background-color: #fffde7;
+}
+.password-strong {
+  border-color: #43a047 !important;
+  background-color: #e8f5e9;
+}
+
+/* Toast Message (Copied from Toast.css if not separate) */
+.toast-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #ffeb3b;
+  color: #333;
+  padding: 12px 18px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 500;
+}
+
+.toast-container.error {
+  background: #ffcdd2;
+  color: #b71c1c;
+}
+
+.toast-container button {
+  background: transparent;
+  border: none;
+  font-size: 16px;
+  color: inherit;
+  cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+  .signup-form {
+    padding: 1.5rem;
+  }
+
+  .signup-form h2 {
+    font-size: 1.3rem;
+  }
+
+  .toggle-group {
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+}
+
+/* Popups */
+.popup {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 14px 20px;
+  border-radius: 8px;
+  color: white;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 250px;
+  animation: slide-in 0.4s ease;
+}
+
+.popup.success {
+  background-color: #4caf50;
+}
+
+.popup.error {
+  background-color: #f44336;
+}
+
+.popup .close {
+  cursor: pointer;
+  font-weight: bold;
+  margin-left: 15px;
+}
+
+/* Slide-in animation */
+@keyframes slide-in {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+
+/* Password strength borders */
+.strength-weak {
+  border: 2px solid red !important;
+}
+
+.strength-medium {
+  border: 2px solid orange !important;
+}
+
+.strength-strong {
+  border: 2px solid green !important;
+}
+
+/* Back Button */
+.back-btn {
+  width: 100%;
+  padding: 0.9rem;
+  background: #b0bec5;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  margin-bottom: 1rem;
+}
+
+.back-btn:hover {
+  background: #78909c;
+  transform: translateY(-2px);
+}
+
+/* Button Group */
+.btn-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Toggle Wrapper */
+.toggle-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 1rem;
+}
+
+/* Styled Checkbox */
+.toggle-wrapper input[type="checkbox"] {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #26a69a;
+  border-radius: 4px;
+  position: relative;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.toggle-wrapper input[type="checkbox"]:checked {
+  background-color: #26a69a;
+}
+
+.toggle-wrapper input[type="checkbox"]::after {
+  content: '✔';
+  color: white;
+  position: absolute;
+  font-size: 14px;
+  top: 1px;
+  left: 4px;
+  display: none;
+}
+
+.toggle-wrapper input[type="checkbox"]:checked::after {
+  display: block;
+}
+
+.toggle-label {
+  font-weight: bold;
+  color: #333;
+}
+
+.review-section {
+  background-color: #f1f8e9;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.review-section ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.review-section li {
+  margin-bottom: 8px;
+}
+
+/* Progress Bar */
+.progress-bar {
+  background: #ccc;
+  border-radius: 50px;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+  height: 10px;
+}
+
+.progress-bar .progress {
+  height: 100%;
+  background: #26a69a;
+  text-align: center;
+  color: white;
+  font-size: 0.7rem;
+  line-height: 10px;
+  white-space: nowrap;
+}
+
+.progress-wrapper {
+  width: 100%;
+  background: #e0e0e0;
+  height: 8px;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  background: #26a69a;
+  transition: width 0.3s ease-in-out;
+}
+
+.amb-toggle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+}
+
+.amb-toggle input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #26a69a;
+}
+
+/* Login Container */
+.login-container {
+  max-width: 400px;
+  margin: 3rem auto;
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* Title */
+.login-container h2 {
+  text-align: center;
+  color: #00796b;
+  margin-bottom: 1.5rem;
+}
+
+/* Form */
+.login-form label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.login-form input {
+  width: 100%;
+  padding: 0.7rem;
+  margin-bottom: 1.2rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.2s ease;
+}
+
+.login-form input:focus {
+  border-color: #26a69a;
+  outline: none;
+}
+
+/* Button */
+.login-form button {
+  width: 100%;
+  padding: 0.9rem;
+  background: #26a69a;
+  border: none;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.login-form button:hover {
+  background: #00796b;
+  transform: translateY(-2px);
+}
+
+/* Error Message */
+.error-msg {
+  color: #b71c1c;
+  font-weight: 600;
+  margin-top: -0.8rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+/* Verification Message Box */
+.verify-message {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background-color: #e0f7fa;
+  border: 1px solid #26a69a;
+  border-radius: 10px;
+  text-align: center;
+  color: #00796b;
+  font-weight: 600;
+}
+
+/* Verification Button */
+.verify-message button {
+  margin-top: 1rem;
+  padding: 0.7rem 1.4rem;
+  background: #26a69a;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.verify-message button:hover {
+  background: #00796b;
+}
+
+.verify-message button:disabled {
+  background: #a5d6a7;
+  cursor: not-allowed;
+}
+
+
+
+
+
